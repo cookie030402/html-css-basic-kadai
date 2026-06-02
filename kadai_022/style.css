@@ -1,0 +1,77 @@
+ご提示いただいた指示と、これまでのレスポンシブ（スマホ・PC切り替え）の要件をすべて統合した、kadai_022 の完成版コードです。
+
+これをそのまま style.css に上書き保存してください。
+
+完成版 style.css
+CSS
+/* --- Step 3: スタイルの下準備 --- */
+h1, p, body { margin: 0; }
+p, a { font-size: 20px; }
+
+/* --- Step 4: header部分のスタイル --- */
+header {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+header h1 { color: rgb(255, 255, 255); }
+
+/* --- Step 5: main部分のスタイル --- */
+main { padding: 10px; }
+
+/* スマホ用の基本スタイル（縦並び） */
+#parent {
+    display: block;
+}
+
+.contents {
+    border: 3px solid rgb(238, 204, 204);
+    padding: 10px 15px;
+    margin: 20px auto;
+    text-align: center;
+    width: 80%;
+}
+.contents img { width: 100%; }
+
+/* h2のデザイン */
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122);
+}
+h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+}
+
+/* 2番目のp要素の最初の文字 */
+.contents p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+}
+
+/* --- レスポンシブ設定（画面幅768pxを超えたらPC表示） --- */
+@media screen and (min-width: 769px) {
+    #parent {
+        display: flex;
+        justify-content: space-between;
+    }
+    .contents {
+        flex-basis: 25%;
+        margin: 20px 0;
+        width: auto;
+    }
+}
+
+/* --- Footer --- */
+footer {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+    padding: 10px 0;
+}
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    font-size: 20px;
+    display: block;
+}
