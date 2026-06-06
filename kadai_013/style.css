@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+#menu-sp {
+  width: 40px;
+  cursor: pointer;
+}
+
+/* ファーストビュー */
+.fv {
+  padding: 40px 16px;
+}
+
+.fv img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* スマホナビ */
+#nav-sp {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #c88a3d;
+  flex-direction: column;
+  padding: 80px 40px;
+  transform: translateX(100%);
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+#nav-sp.open {
+  display: flex;
+  transform: translateX(0);
+}
+
+#close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  cursor: pointer;
+}
+
+#logo-sp {
+  margin-bottom: 40px;
+}
+
+.menu {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* 矢印を配置するための設定 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  #menu-sp,
+  #nav-sp {
+    display: none;
+  }
+}
